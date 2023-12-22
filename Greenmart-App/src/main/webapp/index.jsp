@@ -1,5 +1,6 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="com.DB.DBConnect" %>
+<%@ page import="com.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,6 +29,12 @@ background-color:#fcf7f7;
 </head>
 
 <body style="background-color:#dedad9">
+
+        <%
+        User u=(User)session.getAttribute("userobj");
+        %>
+        
+        
      <%@include file="all_component/navbar.jsp"%>
      <div class="container-fluid back-img">
      </div>
