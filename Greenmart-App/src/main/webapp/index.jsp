@@ -133,7 +133,7 @@ background-color:#fcf7f7;
       </div>
       
       <div class="text-center mt-1 p-3">
-      <a href="" class="btn btn-danger btn-sm text-white">View all</a>
+      <a href="Dashboard.jsp" class="btn btn-danger btn-sm text-white">View all</a>
       </div>
       
       
