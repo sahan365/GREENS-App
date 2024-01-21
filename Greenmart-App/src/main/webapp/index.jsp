@@ -1,3 +1,7 @@
+<%@page import="com.entity.ProductDtls"%>
+<%@page import="java.util.List"%>
+<%@ page import="com.DAO.ProductDAOImpl"%>
+<%@ page import="com.DAO.ProductDAO" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="com.DB.DBConnect" %>
 <%@ page import="com.entity.User" %>
@@ -45,95 +49,59 @@ background-color:#fcf7f7;
       <h3 class="text-center">Vegetables</h3>
       <div class="row p-3">
       
+      
+      <%
+      ProductDAOImpl dao=new ProductDAOImpl(DBConnect.getConn());
+      List<ProductDtls> list= dao.getVegitables();
+      for(ProductDtls b:list)
+      {%>
       <div class="col-md-3">
-      <div class="card crd-ho">
+    	    <div class="card crd-ho">
          <div class="card-body text-center">
-      <img alt="" src="product/carrot1.webp" 
+      <img alt="" src="product/<%=b.getPhotoName() %>"  
       style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Carrot</p>
-      <p>Price-Rs.177.00</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
+      <p><%=b.getProductName() %></p>
+      <p><%=b.getPrice() %></p>
+      <p>
+      
+      <%
+      if (b.getProductCategory().equals("Vegitable"))
+      {%>
+      Categories:<%=b.getProductCategory() %></p>
+    	  <div class="row">  
+      <a href="" class="btn btn-danger btn-sm ml-6">View</a>
+      </div>
+      <%
+      }else{%>
+    	  <div class="row">
+    	  Categories:<%=b.getProductCategory() %></p>
       <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
+      <a href="Vegitables.jsp" class="btn btn-danger btn-sm">View</a>
          
       
       </div>
+      <%
+      }
+      %>
+      
+      
+      
       
       </div>
       
       </div>
-      
       </div>
+      <%
+      }
+      %>      
       
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/beans.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Green Beans</p>
-      <p>Price-Rs.279.00</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
       
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/potato.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Potato</p>
-      <p>Price-Rs.135.00</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/tomato.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Tomato</p>
-      <p>Price-Rs.243.00</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
       
       
       </div>
       
       <div class="text-center mt-1 p-3">
-      <a href="Dashboard.jsp" class="btn btn-danger btn-sm text-white">View all</a>
+      <a href="Vegitables.jsp" class="btn btn-danger btn-sm text-white">View all</a>
       </div>
       
       
@@ -144,17 +112,22 @@ background-color:#fcf7f7;
       <h3 class="text-center">Fruits</h3>
       <div class="row p-2">
       
-      <div class="col-md-3">
+      <%
+      ProductDAOImpl dao2= new ProductDAOImpl(DBConnect.getConn());
+      List<ProductDtls> list2=dao2.getFruits();
+      for(ProductDtls b:list2)
+      {%>
+    	  <div class="col-md-3">
       <div class="card crd-ho">
          <div class="card-body text-center">
-      <img alt="" src="product/apple.webp" 
+      <img alt="" src="product/<%=b.getPhotoName() %>" 
       style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Apple</p>
-      <p>Price-Rs.429.60</p>
-      <p>Per 300g(s)</p>
+      <p><%=b.getProductName() %></p>
+      <p><%=b.getPrice() %></p>
+      <p><%=b.getProductCategory() %></p>
       <div class="row">
       <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
+      <a href="Fruits.jsp" class="btn btn-danger btn-sm">View</a>
          
       
       </div>
@@ -164,75 +137,15 @@ background-color:#fcf7f7;
       </div>
       
       </div>
-      
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/banana.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Banana</p>
-      <p>Price-Rs 17.60</p>
-      <p>Per 100g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/orange.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Orange</p>
-      <p>Price-Rs.148.80</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      <div class="col-md-3">
-      <div class="card crd-ho">
-         <div class="card-body text-center">
-      <img alt="" src="product/grapes.webp" 
-      style="width: 150px; height: 200px" class="img-thumblin">
-      <p>Grapes</p>
-      <p>Price-Rs.480.00</p>
-      <p>Per 300g(s)</p>
-      <div class="row">
-      <a href="" class="btn btn-success btn-sm"><i class="fa-solid fa-cart-shopping"></i></a>
-      <a href="" class="btn btn-danger btn-sm">View</a>
-         
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
-      </div>
-      
+      <%
+      }
+      %>
+    
       
       </div>
       
       <div class="text-center mt-1 p-3">
-      <a href="" class="btn btn-danger btn-sm text-white">View all</a>
+      <a href="Fruits.jsp" class="btn btn-danger btn-sm text-white">View all</a>
       </div>
       
       
