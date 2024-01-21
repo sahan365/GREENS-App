@@ -29,21 +29,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active">
           <a class="nav-link " aria-current="page" href="index.jsp"><i class="fa-solid fa-house"></i> Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i> Products</a>
+          <a class="nav-link" href="Vegitables.jsp"><i class="fa-solid fa-bag-shopping"></i> Vegitables</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
-        </li>
-          
-        <li class="nav-item active">
-          <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"><i class="fa-solid fa-book"></i> About Us</a>
+          <a class="nav-link" href="Fruits.jsp"><i class="fa-solid fa-phone"></i> Fruits</a>
         </li>
       </ul>
+      
       <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-secondary my-2 my-sm ml-0" type="submit">
         <i class="fa-solid fa-gear"></i>Settings
