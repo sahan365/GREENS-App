@@ -35,10 +35,10 @@
           <a class="nav-link " aria-current="page" href="index.jsp"><i class="fa-solid fa-house"></i> Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="Vegitables.jsp"><i class="fa-solid fa-bag-shopping"></i> Vegitables</a>
+          <a class="nav-link" href="Vegitables.jsp"> Vegitables</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="Fruits.jsp"><i class="fa-solid fa-phone"></i> Fruits</a>
+          <a class="nav-link" href="Fruits.jsp"> Fruits</a>
         </li>
       </ul>
       
